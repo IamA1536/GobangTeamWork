@@ -72,13 +72,13 @@ public class GoBang implements Data, BaseBoard_Data {
     }
 
     GoBang() {
-        DrawPan();
-        for (int i = 0; i < 15; i++) {
-            for (int j = 0; j < 15; j++) {
-                pos[i][j] = new coordinate(150 + i * 50.0, 75 + j * 50.0);
+            DrawPan();
+            for (int i = 0; i < 15; i++) {
+                for (int j = 0; j < 15; j++) {
+                    pos[i][j] = new coordinate(150 + i * 50.0, 75 + j * 50.0);
+                }
             }
-        }
-        g.restore();
+            g.restore();
 
         c.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
@@ -96,10 +96,10 @@ public class GoBang implements Data, BaseBoard_Data {
                         }
                     }
                 }
-                if(Type == 1)
-                    server.setLocation(x,y);
-                if(Type == 2)
-                    client.setLocation(x,y);
+                if (Type == 1)
+                    server.setLocation(x, y);
+                if (Type == 2)
+                    client.setLocation(x, y);
                 AddPiece(x, y);
             }
 
@@ -187,7 +187,7 @@ public class GoBang implements Data, BaseBoard_Data {
 //                System.out.println();
 //            }
             if (IsWin.Checkborad(5, piece)) {
-                System.out.println("12234234");
+//                System.out.println("12234234");
                 if (totalgonumber % 2 == 0) {
                     // °×
                     System.out.println("1111");
@@ -247,19 +247,17 @@ public class GoBang implements Data, BaseBoard_Data {
         IsConnect = connect;
     }
 
-    public void setClient(Client client){
+    public void setClient(Client client) {
         this.client = client;
     }
 
-    public void setServer(Server server){
+    public void setServer(Server server) {
         this.server = server;
     }
 
-    public
-    class coordinate {
+    public class coordinate {
         public double x;
         public double y;
-
         public coordinate(double x, double y) {
             this.x = x;
             this.y = y;

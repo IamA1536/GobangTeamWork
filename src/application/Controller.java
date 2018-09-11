@@ -347,6 +347,8 @@ public class Controller implements Initializable, Data {
 
 
     public void SUBIP() {
+        CONTR.gobang.bd = new Board();
+        CONTR.gobang.thatstart = true;
         ip = IP.getText();
         if (ip.length() == 0) {
             System.out.println("StartServer");
@@ -361,21 +363,21 @@ public class Controller implements Initializable, Data {
             this.EXIT();
         } else {
             client = new Client(ip, CONTR.gobang);
-            CONTR.gobang.setClient(client);
-//            CONTR.gobang.Type = 2;
-            th = new Thread(CONTR.gobang.client);
+//            CONTR.gobang.setClient(client);
+            CONTR.gobang.Type = 2;
+            th = new Thread(client);
             th.start();
         }
 
 //         以上IP和端口为目标连接
 
-        if (client.init()) {//判断是否连接成功
-            CONTR.ip = this.ip;
-            IsConnected = true;
-            CONTR.gobang.setClient(client);
-            CONTR.gobang.Type = 2;
-            this.EXIT();
-        }
+        if ( CONTR.gobang.Type == 2)
+            if (client.init()) {//判断是否连接成功
+                CONTR.ip = this.ip;
+                IsConnected = true;
+                CONTR.gobang.setClient(client);
+                this.EXIT();
+            }
     }
 
     public void GetMyIP() throws UnknownHostException {

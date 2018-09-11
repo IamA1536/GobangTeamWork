@@ -361,7 +361,7 @@ public class Controller implements Initializable, Data {
             this.EXIT();
         } else {
             client = new Client(ip, CONTR.gobang);
-
+            CONTR.gobang.setClient(client);
 //            CONTR.gobang.Type = 2;
             th = new Thread(CONTR.gobang.client);
             th.start();

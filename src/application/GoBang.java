@@ -96,7 +96,10 @@ public class GoBang implements Data, BaseBoard_Data {
                         }
                     }
                 }
-
+                if(Type == 1)
+                    server.setLocation(x,y);
+                if(Type == 2)
+                    client.setLocation(x,y);
                 AddPiece(x, y);
             }
 
@@ -139,11 +142,11 @@ public class GoBang implements Data, BaseBoard_Data {
 
         }
 
-        for (int i = 0; i < RC; i++) {
-            for (int j = 0; j < RC; j++)
-                System.out.print(piece[j][i] + " ");
-            System.out.println();
-        }
+//        for (int i = 0; i < RC; i++) {
+//            for (int j = 0; j < RC; j++)
+//                System.out.print(piece[j][i] + " ");
+//            System.out.println();
+//        }
 
         // changData();
 
@@ -178,11 +181,11 @@ public class GoBang implements Data, BaseBoard_Data {
 
             }
         } else {
-            for (int i = 0; i < RC; i++) {
-                for (int j = 0; j < RC; j++)
-                    System.out.print(piece[i][j] + " ");
-                System.out.println();
-            }
+//            for (int i = 0; i < RC; i++) {
+//                for (int j = 0; j < RC; j++)
+//                    System.out.print(piece[i][j] + " ");
+//                System.out.println();
+//            }
             if (IsWin.Checkborad(5, piece)) {
                 System.out.println("12234234");
                 if (totalgonumber % 2 == 0) {

@@ -39,11 +39,17 @@ public class GoBang implements Data, BaseBoard_Data {
     public Client client;
 
     private boolean putChess(int d, int e) {
-        if (bd.putChess(d, e)) {
-
-            return true;
+        if (IsAI) {
+            if (bd.putChess(d, e)) {
+                return true;
+            }
+            return false;
+        } else {
+            if (piece[d - 1][e - 1] == 0) {
+                return true;
+            }
+            return false;
         }
-        return false;
     }
 
     public int changeX(int x) {
@@ -72,13 +78,13 @@ public class GoBang implements Data, BaseBoard_Data {
     }
 
     GoBang() {
-            DrawPan();
-            for (int i = 0; i < 15; i++) {
-                for (int j = 0; j < 15; j++) {
-                    pos[i][j] = new coordinate(150 + i * 50.0, 75 + j * 50.0);
-                }
+        DrawPan();
+        for (int i = 0; i < 15; i++) {
+            for (int j = 0; j < 15; j++) {
+                pos[i][j] = new coordinate(150 + i * 50.0, 75 + j * 50.0);
             }
-            g.restore();
+        }
+        g.restore();
 
         c.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
@@ -98,8 +104,9 @@ public class GoBang implements Data, BaseBoard_Data {
                 }
                 if (Type == 1)
                     server.setLocation(x, y);
-                if (Type == 2)
+                if (Type == 2) {
                     client.setLocation(x, y);
+                }
                 AddPiece(x, y);
             }
 
@@ -108,15 +115,17 @@ public class GoBang implements Data, BaseBoard_Data {
     }
 
     public void AddPiece(int x, int y) {
-        for (int i = 0; i < totalgonumber; i++) {
-            if (temX == changeX(golist[i].getX()) && temY == changeY(golist[i].getY()))
-                judge = false;
-            else {
-                judge = true;
+        if (!IsConnect) {
+            for (int i = 0; i < totalgonumber; i++) {
+                if (temX == changeX(golist[i].getX()) && temY == changeY(golist[i].getY()))
+                    judge = false;
+                else {
+                    judge = true;
+                }
             }
         }
 
-        if (judge && temY > 0 && temX > 0 && thatstart && putChess(x + 1, y + 1)) {
+        if (judge && thatstart && putChess(x + 1, y + 1)) {
             golist[totalgonumber] = new Piece(x + 1, y + 1, totalgonumber % 2 + 1);
 
             piece[x][y] = totalgonumber % 2 + 1;
@@ -124,7 +133,8 @@ public class GoBang implements Data, BaseBoard_Data {
                 g.setFill(Color.WHITE);
             else
                 g.setFill(Color.BLACK);
-            g.fillOval(temX - 20, temY - 20, 40, 40);
+            g.fillOval(changeX(golist[totalgonumber].getX()) - 20, changeY(golist[totalgonumber].getY()) - 20, 40, 40);
+            System.out.println((changeX(golist[totalgonumber].getX()) - 20) + " " + (changeY(golist[totalgonumber].getY()) - 20));
             totalgonumber += 1;
             if (IsAI) {
                 int[] best = br.AIMove(Hard);
@@ -137,6 +147,7 @@ public class GoBang implements Data, BaseBoard_Data {
                     g.setFill(Color.BLACK);
                 g.fillOval(changeX(golist[totalgonumber].getX()) - 20, changeY(golist[totalgonumber].getY()) - 20, 40,
                         40);
+
                 totalgonumber += 1;
             }
 
@@ -258,6 +269,7 @@ public class GoBang implements Data, BaseBoard_Data {
     public class coordinate {
         public double x;
         public double y;
+
         public coordinate(double x, double y) {
             this.x = x;
             this.y = y;

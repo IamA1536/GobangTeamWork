@@ -71,8 +71,10 @@ public class Client implements Runnable{
 			while(true){
 				while(true){
 					if(!flag){
+						System.out.println("ÔÝÍ£");
 						continue;
 					}
+					System.out.println("¼ÌÐø");
 					String location = row+","+col;
 					if(row >= 0 && row < ROWS && col >= 0 && col <= COLUMNS && chesses[row][col] == 0){
 						chesses[row][col] = -1;

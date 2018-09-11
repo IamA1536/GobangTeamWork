@@ -153,14 +153,6 @@ public class GoBang implements Data, BaseBoard_Data {
 
         }
 
-//        for (int i = 0; i < RC; i++) {
-//            for (int j = 0; j < RC; j++)
-//                System.out.print(piece[j][i] + " ");
-//            System.out.println();
-//        }
-
-        // changData();
-
         if (IsAI) {
             if (bd.isGameOver() == whitePiece || bd.isGameOver() == blackPiece) {
                 if (totalgonumber % 2 == 0) {

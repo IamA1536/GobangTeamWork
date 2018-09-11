@@ -2,7 +2,4 @@
 <component jdk="10" jdk_type="JavaSDK">
 	<exclude-output/>
 	<contentEntry url="file://$MODULE_DIR$"/>
-	<lib name="GobangWork.jar" scope="COMPILE">
-		<relative-module-cls project-related="jar://$PROJECT_DIR$/jar/GobangWork.jar!/"/>
-	</lib>
 </component>

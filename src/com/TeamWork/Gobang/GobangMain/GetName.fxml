@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane prefHeight="846.0" prefWidth="1248.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.TeamWork.Gobang.GobangMain.Controller">
+   <center>
+      <FlowPane alignment="CENTER" maxHeight="800.0" maxWidth="600.0" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" prefHeight="98.0" prefWidth="309.0" text="你的名字">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Label>
+            <Pane prefHeight="17.0" prefWidth="511.0" />
+            <TextField fx:id="NAME" prefHeight="150.0" prefWidth="600.0">
+               <font>
+                  <Font size="70.0" />
+               </font>
+            </TextField>
+            <Pane prefHeight="61.0" prefWidth="461.0" />
+            <Button id="SUB" mnemonicParsing="false" onAction="#SUB" prefHeight="75.0" prefWidth="220.0" text="提交">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Button>
+            <Pane prefHeight="72.0" prefWidth="525.0" />
+            <Button id="EXIT" mnemonicParsing="false" onAction="#ShowMENU" prefHeight="75.0" prefWidth="220.0" text="退出">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Button>
+         </children>
+      </FlowPane>
+   </center>
+</BorderPane>

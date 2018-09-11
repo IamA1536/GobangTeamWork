@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane prefHeight="846.0" prefWidth="1248.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.TeamWork.Gobang.GobangMain.Controller">
+   <center>
+      <FlowPane maxHeight="550.0" maxWidth="275.0" prefHeight="646.0" prefWidth="381.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button id="Local" mnemonicParsing="false" onAction="#ShowLocal" prefHeight="120.0" prefWidth="275.0" text="单机对战">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Button>
+            <Pane prefHeight="45.0" prefWidth="200.0" />
+            <Button id="ONLINE" mnemonicParsing="false" onAction="#ShowGetName" prefHeight="120.0" prefWidth="275.0" text="联机对战">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Button>
+            <Pane prefHeight="45.0" prefWidth="200.0" />
+            <Button id="EXIT" mnemonicParsing="false" onAction="#EXITGame" prefHeight="120.0" prefWidth="275.0" text="退出游戏">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Button>
+         </children>
+      </FlowPane>
+   </center>
+   <top>
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="203.0" prefWidth="647.0" text="五子棋" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="96.0" />
+         </font>
+      </Label>
+   </top>
+</BorderPane>

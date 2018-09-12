@@ -31,6 +31,13 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+/**
+ * javaFX¿ØÖÆÆ÷
+ * @author YZQ
+ * @version 2.0
+ * @since 1.0
+ */
+
 public class Controller implements Initializable, Data {
     private static final int Hard = 0;
     Server server;

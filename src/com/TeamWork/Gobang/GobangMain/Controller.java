@@ -93,6 +93,11 @@ public class Controller implements Initializable, Data {
         // 同上，仅获取IP和端口时调用
     }
 
+    /**
+     * 显示目录界面的方法
+     * @throws Exception
+     */
+
     public void ShowMENU() throws Exception {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MENU.fxml"));
@@ -110,6 +115,12 @@ public class Controller implements Initializable, Data {
         }
     }
 
+    /**
+     * 显示本地对战界面的方法
+     * @throws Exception
+     */
+
+
     public void ShowLocal() throws Exception {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Local.fxml"));
@@ -126,6 +137,12 @@ public class Controller implements Initializable, Data {
         }
     }
 
+    /**
+     * 显示登录界面的方法
+     * @throws Exception
+     */
+
+
     public void ShowGetName() throws Exception {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("GetName.fxml"));
@@ -138,6 +155,12 @@ public class Controller implements Initializable, Data {
             e.printStackTrace();
         }
     }
+
+    /**
+     * 显示联机对战界面的方法
+     * @throws Exception
+     */
+
 
     public void ShowOnline() throws Exception {
         try {
@@ -157,6 +180,12 @@ public class Controller implements Initializable, Data {
         }
     }
 
+    /**
+     * 显示连接界面的方法
+     * @throws Exception
+     */
+
+
     public void ShowGetIP() throws Exception {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("GetIP.fxml"));
@@ -175,6 +204,8 @@ public class Controller implements Initializable, Data {
             e.printStackTrace();
         }
     }
+
+
 
     public void EXIT() {
         OnlyStage.close();
@@ -201,6 +232,10 @@ public class Controller implements Initializable, Data {
         }
     }
 
+    /**
+     * 设置本地双人对战
+     */
+
     public void LocalPVP() {
 
         gobang.thatstart = true;
@@ -211,11 +246,19 @@ public class Controller implements Initializable, Data {
         // 剩下请填写本地PVP的实现
     }
 
+    /**
+     * 设置本地AI对战的方法
+     */
+
     public void LocalPVE() {
         Difficulty.setVisible(true);
         // 难度选择，可见
         // PVE实现在下面的难度选择中
     }
+
+    /**
+     * 本地悔棋的方法
+     */
 
     public void LocalUNDO() {
 
@@ -277,7 +320,9 @@ public class Controller implements Initializable, Data {
         }
     }
 
-    // 当地悔棋
+    /**
+     * 设置简易人机对战
+     */
 
     public void SimplePVE() {
         gobang.IsAI = true;
@@ -297,6 +342,10 @@ public class Controller implements Initializable, Data {
         Difficulty.setVisible(false);
         // 简单PVE
     }
+
+    /**
+     *设置中等人机对战
+     */
 
     public void NormalPVE() {
         gobang.IsAI = true;
@@ -318,6 +367,10 @@ public class Controller implements Initializable, Data {
         // 普通PVE
     }
 
+    /**
+     * 设置困难人机对战
+     */
+
     public void HardPVE() {
         gobang.IsAI = true;
         gobang.thatstart = true;
@@ -337,6 +390,10 @@ public class Controller implements Initializable, Data {
         // 困难PVE
     }
 
+    /**
+     * 显示黑棋赢的方法
+     */
+
     public void BlackWin() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Black Win");
@@ -344,6 +401,10 @@ public class Controller implements Initializable, Data {
         alert.setContentText("黑棋胜");
         alert.showAndWait();
     }
+
+    /**
+     * 显示白棋赢的方法
+     */
 
     public void WhiteWin() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -353,6 +414,9 @@ public class Controller implements Initializable, Data {
         alert.showAndWait();
     }
 
+    /**
+     * 提交IP的方法
+     */
 
     public void SUBIP() {
 
@@ -397,6 +461,11 @@ public class Controller implements Initializable, Data {
         }
 
     }
+
+    /**
+     * 获取本机IP的方法
+     * @throws UnknownHostException
+     */
 
     public void GetMyIP() throws UnknownHostException {
         InetAddress addr = InetAddress.getByName("127.0.0.1");
